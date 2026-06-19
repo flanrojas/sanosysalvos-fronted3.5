@@ -1,0 +1,162 @@
+.mascota-form {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
+  gap: 0.9rem;
+  align-items: end;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+}
+
+.mascota-form .field:has(textarea) {
+  grid-column: span 2;
+}
+
+.mascota-form__actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+
+.mascota-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.mascota-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.mascota-card:hover {
+  border-color: var(--color-line-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.mascota-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.mascota-card__avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.mascota-card__name {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.mascota-card__species {
+  font-size: 0.84rem;
+  color: var(--color-ink-faint);
+}
+
+.mascota-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.mascota-card__tag {
+  background: var(--color-surface-sunken);
+  color: var(--color-ink-soft);
+  border-radius: var(--radius-pill);
+  padding: 0.28rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.mascota-card__desc {
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mascota-card__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.mascota-card__date {
+  font-size: 0.78rem;
+  color: var(--color-ink-faint);
+}
+
+.mascota-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-ink-faint);
+  padding: 0.35rem;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+.icon-btn:hover {
+  color: var(--color-danger);
+  background: var(--color-lost-soft);
+}
+
+@media (max-width: 980px) {
+  .mascota-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .mascota-form {
+    grid-template-columns: 1fr;
+  }
+
+  .mascota-form .field:has(textarea) {
+    grid-column: auto;
+  }
+
+  .mascota-form__actions {
+    justify-content: stretch;
+  }
+
+  .mascota-form__actions .btn {
+    flex: 1;
+  }
+}

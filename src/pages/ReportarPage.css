@@ -1,0 +1,124 @@
+.form-shell {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.form-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.4rem, 4vw, 2.2rem);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-section + .form-section {
+  margin-top: 1.8rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.form-section__title {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.form-section__hint {
+  font-size: 0.88rem;
+  color: var(--color-ink-faint);
+  margin-bottom: 1.1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.form-grid--full > * {
+  grid-column: 1 / -1;
+}
+
+.span-2 {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 620px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.type-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.type-option {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1.5px solid var(--color-line-strong);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+  text-align: left;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.type-option:hover {
+  border-color: var(--color-ink-faint);
+}
+
+.type-option--active-lost {
+  border-color: var(--color-lost);
+  background: var(--color-lost-soft);
+}
+.type-option--active-found {
+  border-color: var(--color-found);
+  background: var(--color-found-soft);
+}
+
+.type-option__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.type-option--lost .type-option__icon {
+  background: var(--color-lost-soft);
+  color: var(--color-lost);
+}
+.type-option--found .type-option__icon {
+  background: var(--color-found-soft);
+  color: var(--color-found);
+}
+
+.type-option__title {
+  font-weight: 600;
+}
+.type-option__sub {
+  font-size: 0.8rem;
+  color: var(--color-ink-faint);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  margin-top: 1.8rem;
+}
+
+.form-error {
+  background: var(--color-lost-soft);
+  color: var(--color-lost);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
